@@ -1,0 +1,80 @@
+<!--
+  Generated template for the QuotePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Compras felices</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p text-center>La compañía de los Alpes te permitirá armar tu paquete de productos como lo desees</p>
+  <p class="margin-top-50" text-center>Escoge los productos que deseas cotizar en tu paquete</p>
+  <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+            <ion-avatar item-start>
+                <img class="height-70" src="../../assets/imgs/telefonia-fija.png"><p text-center>Telefonía fija</p>
+            </ion-avatar>
+        </ion-col>
+        <ion-col col-4>
+                <ion-avatar item-start>
+                    <img class="height-70" src="../../assets/imgs/telefonia-movil.png"><p text-center>Telefonía movil</p>
+                </ion-avatar>
+            </ion-col>
+        <ion-col col-4>
+            <ion-avatar item-start>
+                <img class="height-70" src="../../assets/imgs/datos.png"><p text-center>Datos</p>
+            </ion-avatar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-4>
+              <ion-checkbox (click)="validateCheck(fixedTelephony)" margin-left color="dark" [(ngModel)]="fixedTelephony"></ion-checkbox> 
+          </ion-col>
+          <ion-col col-4>
+              <ion-checkbox (click)="validateCheck(mobileTelephony)" margin-left color="dark" [(ngModel)]="mobileTelephony"></ion-checkbox>
+          </ion-col>
+          <ion-col col-4>
+              <ion-checkbox (click)="validateCheck(mobileData)" margin-left color="dark" [(ngModel)]="mobileData"></ion-checkbox>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-4>
+              <ion-avatar item-start>
+                  <img class="height-70" src="../../assets/imgs/televisor.png"><p text-center>Plan de Televisión</p>
+              </ion-avatar>
+          </ion-col>
+          <ion-col col-4>
+              <ion-avatar item-start>
+                  <img class="height-70" src="../../assets/imgs/celular.png"><p text-center>Comprar Celular</p>
+              </ion-avatar>
+          </ion-col>
+          <ion-col col-4>
+              <ion-avatar item-start>
+                  <img class="height-70" src="../../assets/imgs/internet-hogar.png"><p text-center>Internet Hogar</p>
+              </ion-avatar>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col col-4>
+              <ion-checkbox (click)="validateCheck(tv)" margin-left color="dark" [(ngModel)]="tv"></ion-checkbox> 
+          </ion-col>
+          <ion-col col-4>
+              <ion-checkbox (click)="validateCheck(cellphone)" margin-left color="dark" [(ngModel)]="cellphone"></ion-checkbox>
+          </ion-col>
+          <ion-col col-4>
+              <ion-checkbox (click)="validateCheck(internet)" margin-left color="dark" [(ngModel)]="internet"></ion-checkbox>
+          </ion-col>
+      </ion-row>
+  </ion-grid>
+  <button ion-button round [disabled]=(error) class="margin-left-100" margin-top (click)="goToSelectProducts()">
+    <ion-icon name="cart"></ion-icon> Cotizar
+  </button>
+</ion-content>
