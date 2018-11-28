@@ -7,14 +7,26 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Finish</ion-title>
+    <ion-title>Finalizar</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <button [disabled]="error" ion-button round class="margin-left-70 margin-top-50" (click)="goToQuote()">
-      <ion-icon name="person"></ion-icon> Finalizar
+    <ion-list>
+      <ion-row class ='center-element'><strong class="great title-products" text-center>Detalles de la instalación</strong></ion-row>
+      <ul>
+        <li type="circle"><strong>Duración de la instalación</strong></li>
+        <li>2 Horas</li>
+        <li type="circle"><strong>Cómo se identificará el colaborador</strong></li>
+        <li>Gorra y chaleco de color azul con el logo de X-Nueva Telco</li>
+        <li type="circle"><strong>Nombre del colaborador</strong></li>
+        <li>Nicolás Arias Benavides</li>
+      </ul>
+    </ion-list>
+    <p class="title-products margin-top-50">Hemos enviado todos los detalles a su correo electrónico</p>
+    <button [disabled]="error" ion-button round class="margin-left-30-percent margin-top-50" (click)="goToQuote()">
+      Finalizar
     </button>
 </ion-content>

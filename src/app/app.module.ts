@@ -18,6 +18,7 @@ import { InternetPage } from '../pages/internet/internet';
 import { EnterDataPage } from '../pages/enter-data/enter-data';
 import { ProductsResumePage } from '../pages/products-resume/products-resume';
 import { FinishPage } from '../pages/finish/finish';
+import { CalendarModule } from 'ionic3-calendar-en';
 
 @NgModule({
   declarations: [

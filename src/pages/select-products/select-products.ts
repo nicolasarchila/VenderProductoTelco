@@ -7,6 +7,7 @@ import { TelevisionPlanPage } from '../television-plan/television-plan';
 import { CellphonePage } from '../cellphone/cellphone';
 import { InternetPage } from '../internet/internet';
 import { HomePage } from '../home/home';
+import { QuotePage } from '../quote/quote';
 
 /**
  * Generated class for the SelectProductsPage page.
@@ -22,10 +23,21 @@ import { HomePage } from '../home/home';
 })
 export class SelectProductsPage {
 
+  error: Boolean = true;
+  flag: Boolean = true;
   productsList:Array<{id: String, text: String, success: String, plan: String, description: String}> = []; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.productsList = navParams.data.productsList;
+    this.flag = true;
+    this.productsList.forEach(element => {
+      if('0' == element.success){
+        this.flag = false;
+      }
+    });
+    if(this.flag == true){
+      this.error = false;
+    }
   }
 
   ionViewDidLoad() {
@@ -87,6 +99,12 @@ export class SelectProductsPage {
         break; 
       } 
    } 
+  }
+
+  goToQuote(){
+    this.navCtrl.push(QuotePage,{
+
+    });
   }
 
 }

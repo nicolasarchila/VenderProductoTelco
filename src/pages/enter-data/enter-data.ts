@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { ProductsResumePage } from '../products-resume/products-resume';
 
 /**
@@ -27,7 +27,7 @@ export class EnterDataPage {
 
   productsList:Array<{id: String, text: String, success: String, plan: String, description: String}> = []; 
 
-  constructor(public navCtrl: NavController,public navParams: NavParams) {
+  constructor(public navCtrl: NavController,public navParams: NavParams, public alertCtrl: AlertController) {
     this.productsList = navParams.data.productsList;
   }
 
@@ -46,7 +46,15 @@ export class EnterDataPage {
     && this.telephone != '' && this.address != '' && this.salary != ''){
       this.error = false;
     }
+  }
 
+  showAlert() {
+    const alert = this.alertCtrl.create({
+      title: 'Términos y condiciones',
+      subTitle: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content here, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
 }

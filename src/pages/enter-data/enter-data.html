@@ -43,7 +43,16 @@
     <ion-label floating>*Salario</ion-label>
     <ion-input (change)="validateDate()" type="number" value="" [(ngModel)]="salary"></ion-input>
   </ion-item>
-  <button [disabled]="error" ion-button round class="margin-left-70 margin-top-50" (click)="goToProductsResume()">
+  <ion-row class="margin-top-50">
+    <ion-item no-lines>
+      <ion-label >Aceptar términos y condiciones.</ion-label>
+      <ion-checkbox  [(ngModel)]="checkedButton" color="dark" checked="true"></ion-checkbox>
+    </ion-item>
+    <ion-item no-lines>
+        <ion-label ><a class="show-terms-and-conditions margin-left-50"  (click)="showAlert()">Ver términos y condiciones</a></ion-label>
+      </ion-item>
+  </ion-row>
+  <button margin-top [disabled]=(error||!checkedButton) ion-button round class="margin-left-70" (click)="goToProductsResume()">
     <ion-icon name="person"></ion-icon> Ingresar Datos
   </button>
 </ion-content>

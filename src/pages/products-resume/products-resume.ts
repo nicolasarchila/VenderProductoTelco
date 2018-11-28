@@ -16,7 +16,10 @@ import { FinishPage } from '../finish/finish';
 })
 export class ProductsResumePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  productsList:Array<{id: String, text: String, success: String, plan: String, description: String}> = []; 
+
+  constructor(public navCtrl: NavController,public navParams: NavParams) {
+    this.productsList = navParams.data.productsList;
   }
 
   ionViewDidLoad() {

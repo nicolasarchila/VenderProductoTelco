@@ -7,14 +7,26 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>ProductsResume</ion-title>
+    <ion-title>Resumen de Productos</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
-    <button [disabled]="error" ion-button round class="margin-left-70 margin-top-50" (click)="goToFinishPage()">
+    <ion-row class ='center-element'><strong class="great title-products" text-center>Felicitaciones!</strong></ion-row>
+    <p class="title-products">Usted adquirió lo siguientes productos:</p>
+    <ion-list *ngFor="let item of productsList" [ngSwitch]="item.plan">
+      <ul>
+        <li type="circle" *ngSwitchCase="1"><strong>Telefonía Fija</strong></li>
+        <li type="circle" *ngSwitchCase="2"><strong>Telefonía Móvil</strong></li>
+        <li type="circle" *ngSwitchCase="3"><strong>Datos</strong></li>
+        <li type="circle" *ngSwitchCase="4"><strong>Plan de Televisión</strong></li>
+        <li type="circle" *ngSwitchCase="5"><strong>Celular</strong></li>
+        <li type="circle" *ngSwitchCase="6"><strong>Internet Hogar</strong></li>
+        <li>{{item.description}}</li>
+      </ul>
+    </ion-list>
+    <button [disabled]="error" ion-button round class="margin-left-10-percent margin-top-50" (click)="goToFinishPage()">
       <ion-icon name="person"></ion-icon> Detalles de la instalación
     </button>
 </ion-content>
